@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,205 +9,480 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 </head>
+
 <body>
+
     <header class="header">
         <a class="nav" href="./index.html">
-            Thuan <span class="container">Mai.</span>
+            <span style="font-family:'Brush Script MT', cursive;">VThuan<span class="container">Mai.</span></span>
         </a>
         <div class="nav__2">
             <div class="nav__menu">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="./index.html" class=" nav__link" >Home</a></li>
-                    <li class="item_active nav__item"><a href="./project.html" class="active nav__link">Projects</a></li>
+                    <li class="nav__item"><a href="./index.html" class=" nav__link">Home</a></li>
+                    <li class="item_active nav__item"><a href="./project.html" class="active nav__link">Research</a></li>
                     <li class="nav__item"><a href="./publications.html" class="nav__link">Publications</a></li>
+                    <li class="nav__item"><a href="./coursework.html" class="nav__link">Courseworks</a></li>
                     <li class="nav__item"><a href="./gallery.html" class="nav__link">Gallery</a></li>
-                    <li class="nav__item"><a href="./contact.html" class="nav__link">Contact</a></li>
                 </ul>
             </div>
             <div class="nav__buttons">
-                <i class='bx bx-moon change-theme' id="theme-button" ></i>
+                <i class='bx bx-moon change-theme' id="theme-button"></i>
                 <div class="" id="nav-toggle">
                     <input type="checkbox" id="checkbox">
-                        <label for="checkbox" class="toggle nav__toggle">
+                    <label for="checkbox" class="toggle nav__toggle">
                         <div class="bar bar--top"></div>
                         <div class="bar bar--middle"></div>
                         <div class="bar bar--bottom"></div>
-                        </label>
+                    </label>
                 </div>
             </div>
         </div>
     </header>
 
-    <main class="main__public">
-        <h2 class="title__main_project">Projects</h2>
-
-        <!-- Du an 1  --> 
-
-        <div class="main__project">
-            <!-- <div class="title__public">
-                <i class='bx bx-brightness'></i> 
-                <h1>Project 1</h1>
-            </div> -->
-            <div class="public">
-                <div class="public_content">
-                    <h2 class="name_project">Machine Learning-Based Prediction Model for Soil Corrosion Rate Through Big Data Collection</h2>   
-                    <li> Data Analysis and Processing Techniques: <nav></nav>
-                        - Correlation Coefficient Analysis <nav></nav>
-                        - Analyzing and Processing Missing Values <nav></nav>
-                        - Outlier Analysis and Processing
-                    </li>
-                    <li> Machine Learning model: <nav></nav>
-                        Python-based Keras Library: <nav></nav>
-                        - Activation Functions: ReLU/PReLU <nav></nav>
-                        - Optimization Functions: Adam/SGD
-                    </li>
-                    <li> 
-                        Learning curve results
-                    </li>
-                </div>
-                <div class="public_image">
-                            <img src="./imgs/projects/TOC.png" alt="">
-                </div>
-            </div>
+    <main class="main__public pb-[100px]">
+            <h2 class="title__main_project text-[36px]"> Research & Project</h2>
         </div>
 
-        <!-- Du an 2  --> 
+        <div class="main__project pt-[40px] mb-[60px]">
+            <div class=" mb-[40px]">
+                <h1 class="text-[32px]" style="font-weight: bold; font-size: 26px; line-height: 1.7; color: #541e1b;" >My Repositories</h1> <!-- them gach dau dong vao -->
+            </div>
+            <!-- Du an 1  -->
+            <div class="mb-[40px]">
+                <ul id="tabs" class="flex items-center flex-wrap gap-[20px] rounded-lg">
+                    <li onclick="filterSelection('all')"
+                        class="tab-button px-[20px] py-[4px]  border-solid border-[1px] text-center  bg-[#F1E4C3] rounded hover:bg-green-300 cursor-pointer">
+                        Highlights </li>
+                    <li onclick="filterSelection('computer-vision')"
+                        class="tab-button px-[20px] py-[4px]  border-solid border-[1px] text-center  bg-[#F1E4C3] rounded hover:bg-green-300 cursor-pointer">
+                        Machine Learning</li>
+                    <li onclick="filterSelection('from-scratch')"
+                        class="tab-button px-[20px] py-[4px]  border-solid border-[1px] text-center  bg-[#F1E4C3] rounded hover:bg-green-300 cursor-pointer">
+                        Deep Learning</li>
+                    <li onclick="filterSelection('web-development')"
+                        class="tab-button px-[20px] py-[4px]  border-solid border-[1px] text-center  bg-[#F1E4C3] rounded hover:bg-green-300 cursor-pointer">
+                        Web Development</li>
+                    <li onclick="filterSelection('tiny-repos')"
+                        class="tab-button px-[20px] py-[4px]  border-solid border-[1px] text-center  bg-[#F1E4C3] rounded hover:bg-green-300 cursor-pointer">
+                        Papers research
+                    </li>
+                </ul>
+            </div>
 
-        <div class="main__project">
-            <div class="public">
-                <div class="public_content">
-                    <h2 class="name_project">Lift Simulation for Ro-Ro Sewol Ferry Wreck Load out of Water Recovery
-                        Curve Analysis using ABAQUS</h2>      
-                    <li> Optimizing mesh and simulating payload for the Sewol ferry with HyperMesh.
-                    </li>
-                    <li> Execution using Abaqus and a comparative analysis of various loads.
-                    </li>
-                </div>
-                        <div class="public_image">
-                            <img src="./imgs/projects/SEWOL.png" alt="">
+<!--===================== Thay doi layout=====================================  -->
+            <div id="content" class="grid grid-cols-12 gap-4">
+                <div
+                class="item all computer-vision relative pb-[50px] no-auto-flow  col-span-12 sm:col-span-6 lg:col-span-4 hover:shadow-2xl duration-500 p-[20px] border border-[1px] rounded-[20px] cursor-pointer bg-[#F3F8FF]">
+                    <div class="">
+                        <div class="w-[100%] mb-[40px]">
+                            <img src="./imgs/projects/TOC.png" alt="project">
                         </div>
-            </div>
-        </div>
-
-
-        <!-- Du an 3  --> 
-
-        <div class="main__project">
-            <div class="public">
-                <div class="public_content">
-                    <h2 class="name_project">Impact Damage Analysis the KDDX-Class Destroyer Collision Simulator
-                        for Rocks, Tankers, and Container Ships</h2>     
-                    <li> Refinement of Components: 100mm x 100mm shell elements
-                    </li>
-                    <li> Collision Simulation with Rocks (30, 60, 90 degrees)
-                    </li>
-                    <li> Collision Simulation with Tankers, Container Ships, War ships.
-                    </li>
-                    <li> Calculating  the extent of destruction and impact damage for each collisions.
-                    </li>
-                </div>
-                        <div class="public_image">
-                            <img src="./imgs/projects/KDDX.png" alt="">
+                        <div class="pb-[20px] h-[200px] duration-500  overflow-hidden collapsible w-[100%] mb-[20px]">
+                            <h2 class="leading-[28px]">Machine Learning-Based Prediction Model for Soil Corrosion Rate Through Big Data Collection</h2>
+                            <li class="leading-[28px]"> Data Analysis and Processing Techniques: <nav></nav>
+                                - Correlation Coefficient Analysis <nav></nav>
+                                - Analyzing and Processing Missing Values <nav></nav>
+                                - Outlier Analysis and Processing
+                            </li>
+                            <li class="leading-[28px]"> Machine Learning model: <nav></nav>
+                                Python-based Keras Library: <nav></nav>
+                                - Activation Functions: ReLU/PReLU <nav></nav>
+                                - Optimization Functions: Adam/SGD
+                            </li>
+                            <li class="leading-[28px]">
+                                Learning curve results
+                            </li>
                         </div>
-            </div>
-        </div>
 
-        <!-- Du an 4  --> 
-        <div class="main__project">
-            <div class="public">
-                <div class="public_content">
-                    <h2 class="name_project">Numerical investigation of motion response of the tanker at varying VCGs </h2>      
-                    <li> Perform Roll Decay tests with different GMs.
-                    </li>
-                    <li> Estimate the Roll Damping coefficient using Froude's method from the time series data.
-                    </li>
-                    <li> Simulation motion response using the 3D panel method in Ansys AQWA.
-                    </li>
+                        <div class="flex justify-center absolute bottom-[10px] left-[50%] translate-x-[-50%]">
+                            <button data-target="0"
+                                class="loadMore px-[20px] py-[4px] bg-[#60cbe6] rounded-[20px]  duration-500 hover:text-[#fff]">Github</button>
 
-                </div>
-                        <div class="public_image">
-                            <img src="./imgs/projects/KVLCC2.png" alt="">
                         </div>
-            </div>
-        </div>
-
-
-        <!-- Du an 5  --> 
-
-        <div class="main__project">
-            <div class="public">
-                <div class="public_content">
-                    <h2 class="name_project">ABAQUS Analysis for Earthquake-Resistance Design of Fire-Fighting
-                        Facilities</h2>      
-                    <li> Analysis of Seismic simulation based apply external load for frame fire.
-                    </li>
-
+                    </div>
                 </div>
-                        <div class="public_image">
-                            <img src="./imgs/projects/EARTHQUAKE.png" alt="">
+
+                <div
+                class="item all computer-vision relative pb-[50px] no-auto-flow  col-span-12 sm:col-span-6 lg:col-span-4 hover:shadow-2xl duration-500 p-[20px] border border-[1px] rounded-[20px] cursor-pointer bg-[#F3F8FF]">
+                    <div class="">
+                        <div class="w-[100%] mb-[40px]">
+                            <img src="./imgs/projects/TOC.png" alt="project">
                         </div>
-            </div>
-        </div>
-        
-        <!-- Du an 6  --> 
-
-        <div class="main__project">
-            <div class="public">
-                <div class="public_content">
-                    <h2 class="name_project">Analysis of 560 kWh vortex buffer tank CFD - Gasan Digital Center</h2>      
-                    <li> Verifying vortex type performance stable laminar flow formation.
-                    </li>
-
-                </div>
-                        <div class="public_image">
-                            <img src="./imgs/projects/TANK.png" alt="">
+                        <div class="pb-[20px] h-[200px] duration-500  overflow-hidden collapsible w-[100%] mb-[20px]">
+                            <h2 class="leading-[28px]">From Scratch Machine Learning-Based Prediction Model for Soil
+                                Corrosion Rate
+                                Through
+                                Big
+                                Data Collection</h2>
+                            <li class="leading-[28px]"> Data Analysis and Processing Techniques: <nav></nav>
+                                - Correlation Coefficient Analysis <nav></nav>
+                                - Analyzing and Processing Missing Values <nav></nav>
+                                - Outlier Analysis and Processing
+                            </li>
+                            <li class="leading-[28px]"> Machine Learning model: <nav></nav>
+                                Python-based Keras Library: <nav></nav>
+                                - Activation Functions: ReLU/PReLU <nav></nav>
+                                - Optimization Functions: Adam/SGD
+                            </li>
+                            <li class="leading-[28px]">
+                                Learning curve results
+                            </li>
                         </div>
+
+                        <div class="flex justify-center absolute bottom-[10px] left-[50%] translate-x-[-50%]">
+                            <button data-target="0"
+                                class="loadMore px-[20px] py-[4px] bg-[#60cbe6] rounded-[20px]  duration-500 hover:text-[#fff]">Github</button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                class="item all computer-vision relative pb-[50px] no-auto-flow  col-span-12 sm:col-span-6 lg:col-span-4 hover:shadow-2xl duration-500 p-[20px] border border-[1px] rounded-[20px] cursor-pointer bg-[#F3F8FF]">
+                    <div class="">
+                        <div class="w-[100%] mb-[40px]">
+                            <img src="./imgs/projects/TOC.png" alt="project">
+                        </div>
+                        <div class="pb-[20px] h-[200px] duration-500  overflow-hidden collapsible w-[100%] mb-[20px]">
+                            <h2 class="leading-[28px]">Web Development Machine Learning-Based Prediction Model for Soil
+                                Corrosion Rate
+                                Through
+                                Big
+                                Data Collection</h2>
+                            <li class="leading-[28px]"> Data Analysis and Processing Techniques: <nav></nav>
+                                - Correlation Coefficient Analysis <nav></nav>
+                                - Analyzing and Processing Missing Values <nav></nav>
+                                - Outlier Analysis and Processing
+                            </li>
+                            <li class="leading-[28px]"> Machine Learning model: <nav></nav>
+                                Python-based Keras Library: <nav></nav>
+                                - Activation Functions: ReLU/PReLU <nav></nav>
+                                - Optimization Functions: Adam/SGD
+                            </li>
+                            <li class="leading-[28px]">
+                                Learning curve results
+                            </li>
+                        </div>
+
+                        <div class="flex justify-center absolute bottom-[10px] left-[50%] translate-x-[-50%]">
+                            <button data-target="0"
+                                class="loadMore px-[20px] py-[4px] bg-[#60cbe6] rounded-[20px]  duration-500 hover:text-[#fff]">Github</button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                class="item all computer-vision relative pb-[50px] no-auto-flow  col-span-12 sm:col-span-6 lg:col-span-4 hover:shadow-2xl duration-500 p-[20px] border border-[1px] rounded-[20px] cursor-pointer bg-[#F3F8FF]">
+                    <div class="">
+                        <div class="w-[100%] mb-[40px]">
+                            <img src="./imgs/projects/TOC.png" alt="project">
+                        </div>
+                        <div class="pb-[20px] h-[200px] duration-500  overflow-hidden collapsible w-[100%] mb-[20px]">
+                            <h2 class="leading-[28px]">Tiny Repos Machine Learning-Based Prediction Model for Soil
+                                Corrosion Rate
+                                Through
+                                Big
+                                Data Collection</h2>
+                            <li class="leading-[28px]"> Data Analysis and Processing Techniques: <nav></nav>
+                                - Correlation Coefficient Analysis <nav></nav>
+                                - Analyzing and Processing Missing Values <nav></nav>
+                                - Outlier Analysis and Processing
+                            </li>
+                            <li class="leading-[28px]"> Machine Learning model: <nav></nav>
+                                Python-based Keras Library: <nav></nav>
+                                - Activation Functions: ReLU/PReLU <nav></nav>
+                                - Optimization Functions: Adam/SGD
+                            </li>
+                            <li class="leading-[28px]">
+                                Learning curve results
+                            </li>
+                        </div>
+
+                        <div class="flex justify-center absolute bottom-[10px] left-[50%] translate-x-[-50%]">
+                            <button data-target="0"
+                                class="loadMore px-[20px] py-[4px] bg-[#60cbe6] rounded-[20px]  duration-500 hover:text-[#fff]">Github</button>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Du an 7  --> 
+        <!-- ===================================Du an simulation ===================================================== -->
 
-        <div class="main__project">
-            <!-- <div class="title__public">
-                <i class='bx bx-brightness'></i> 
-                <h1>Project 1</h1>
-            </div> -->
-            <div class="public">
-                <div class="public_content">
-                    <h2 class="name_project">Calculating Long Term Assessment of an AI-based fishing boat
-                        safety design data platform by using CFD</h2>   
-                    <li> Modelling with 27 models with different bow.
-                    </li>
-                    <li> Calculating wave spectrum with South Korea sea.
-                    </li>
-                    <li> Mesh models with the max. of sea state values.
-                    </li>
-                    <li> Simulation models with potential method in Ansys AQWA.
+        <div class="main__project pt-[40px]">
+            <div class=" mb-[40px]">
+                <h1 class="text-[32px] " style="font-weight: bold; font-size: 26px; line-height: 1.7; color: #541e1b;" >Simulation</h1> <!-- them gach dau dong vao -->
+            </div>
 
-                    </li>
+            <div class="grid grid-cols-12 gap-[30px]">
+                <div
+                    class="item all computer-vision relative pb-[50px] no-auto-flow  col-span-12 sm:col-span-6 lg:col-span-4 hover:shadow-2xl duration-500 p-[20px] border border-[1px] rounded-[20px] cursor-pointer bg-[#F3F8FF]">
+                    <div class="w-[100%] mb-[40px]">
+                        <img src="./imgs/projects/SEWOL.png" alt="project">
+                    </div>
+                    <div class=" h-[200px] duration-500  overflow-hidden collapsible  w-[100%]">
+                        <h2 class="leading-[28px]">Lift Simulation for Ro-Ro Sewol Ferry Wreck Load out of Water
+                            Recovery
+                            Curve Analysis using ABAQUS</h2>
+                        <li class="leading-[28px]"> Optimizing mesh and simulating payload for the Sewol ferry with
+                            HyperMesh.
+                        </li>
+                        <li class="leading-[28px]"> Execution using Abaqus and a comparative analysis of various loads.
+                        </li>
+                        <li class="leading-[28px]"> The results would be runned in Linux.
+                        </li>
+                    </div>
+                    <div class="flex justify-center absolute bottom-[10px] left-[50%] translate-x-[-50%]">
+                        <!-- <button data-target="1" class="loadMore px-[20px] py-[4px] bg-[#60cbe6] rounded-[20px]  duration-500 hover:text-[#fff]">Github</button> -->
+
+                    </div>
                 </div>
-                <div class="public_image">
-                            <img src="./imgs/projects/AL-boat.png" alt="">
+
+                <div
+                    class="item all computer-vision relative pb-[50px] no-auto-flow  col-span-12 sm:col-span-6 lg:col-span-4 hover:shadow-2xl duration-500 p-[20px] border border-[1px] rounded-[20px] cursor-pointer bg-[#F3F8FF]">
+                    <div class="w-[100%] mb-[40px]">
+                        <img src="./imgs/projects/KDDX.png" alt="project">
+                    </div>
+                    <div class="pb-[20px] h-[200px] duration-500  overflow-hidden collapsible  w-[100%]">
+                        <h2 class="leading-[28px]">Impact Damage Analysis the KDDX-Class Destroyer Collision Simulator
+                            for Rocks, Tankers, and Container Ships</h2>
+                        <li class="leading-[28px]"> Refinement of Components: 100mm x 100mm shell elements
+                        </li>
+                        <li class="leading-[28px]"> Collision Simulation with Rocks (30, 60, 90 degrees)
+                        </li>
+                        <li class="leading-[28px]"> Collision Simulation with Tankers, Container Ships, War ships.
+                        </li>
+                        <li class="leading-[28px]"> Calculating the extent of destruction and impact damage for each
+                            collisions.
+                        </li>
+                    </div>
+                    <div class="flex justify-center absolute bottom-[10px] translate-x-[-50%] left-[50%]">
+                        <!-- <button data-target="2" class="loadMore px-[20px] py-[4px] bg-[#60cbe6] rounded-[20px]  duration-500 hover:text-[#fff]">Github</button> -->
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="item all computer-vision relative pb-[50px] no-auto-flow  col-span-12 sm:col-span-6 lg:col-span-4 hover:shadow-2xl duration-500 p-[20px] border border-[1px] rounded-[20px] cursor-pointer bg-[#F3F8FF]">
+                    <div class="w-[100%] mb-[40px]">
+                        <img src="./imgs/projects/KVLCC2.png" alt="project">
+                    </div>
+                    <div class="w-[100%] h-[200px] duration-500  overflow-hidden collapsible ">
+                        <h2 class="leading-[28px]">Numerical investigation of motion response of the tanker at varying
+                            VCGs</h2>
+                        <li class="leading-[28px]"> Perform Roll Decay tests with different GMs.
+                        </li>
+                        <li class="leading-[28px]"> Estimate the Roll Damping coefficient using Froude's method from the
+                            time series data.
+                        </li>
+                        <li class="leading-[28px]"> Simulation motion response using the 3D panel method in Ansys AQWA.
+                        </li>
+                    </div>
+                    <div class="flex justify-center absolute bottom-[10px] translate-x-[-50%] left-[50%]">
+                        <!-- <button data-target="3" class="loadMore px-[20px] py-[4px] bg-[#60cbe6] rounded-[20px]  duration-500 hover:text-[#fff]">Github</button> -->
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="item all computer-vision relative pb-[50px] no-auto-flow  col-span-12 sm:col-span-6 lg:col-span-4 hover:shadow-2xl duration-500 p-[20px] border border-[1px] rounded-[20px] cursor-pointer bg-[#F3F8FF]">
+                    <div class="w-[100%] mb-[40px]">
+                        <img src="./imgs/projects/EARTHQUAKE.png" alt="project">
+                    </div>
+                    <div class="w-[100%] h-[200px] duration-500  overflow-hidden collapsible ">
+                        <h2 class="leading-[28px]">ABAQUS Analysis for Earthquake-Resistance Design of Fire-Fighting
+                            Facilities</h2>
+                        <li class="leading-[28px]"> Analysis of Seismic simulation based apply external load for frame
+                            fire.
+                        </li>
+                    </div>
+                    <div class="flex justify-center absolute bottom-[10px] translate-x-[-50%] left-[50%]">
+                        <!-- <button data-target="4" class="loadMore px-[20px] py-[4px] bg-[#60cbe6] rounded-[20px]  duration-500 hover:text-[#fff]">Github</button> -->
+
+                    </div>
+                </div>
+
+                <div
+                    class="item all computer-vision relative pb-[50px] no-auto-flow  col-span-12 sm:col-span-6 lg:col-span-4 hover:shadow-2xl duration-500 p-[20px] border border-[1px] rounded-[20px] cursor-pointer bg-[#F3F8FF]">
+                    <div class="w-[100%] mb-[40px]">
+                        <img src="./imgs/projects/TANK.png" alt="project">
+                    </div>
+                    <div class="w-[100%] h-[200px] duration-500  overflow-hidden collapsible ">
+                        <h2 class="leading-[28px]">Analysis of 560 kWh vortex buffer tank CFD - Gasan Digital Center
+                        </h2>
+                        <li class="leading-[28px]"> Verifying vortex type performance stable laminar flow formation.
+                        </li>
+                    </div>
+                    <div class="flex justify-center absolute bottom-[10px] translate-x-[-50%] left-[50%]">
+                        <!-- <button data-target="5"class="loadMore px-[20px] py-[4px] bg-[#60cbe6] rounded-[20px]  duration-500 hover:text-[#fff]">Github</button> -->
+                    </div>
+                </div>
+
+                <div
+                    class="item all computer-vision relative pb-[50px] no-auto-flow  col-span-12 sm:col-span-6 lg:col-span-4 hover:shadow-2xl duration-500 p-[20px] border border-[1px] rounded-[20px] cursor-pointer bg-[#F3F8FF]">
+                    <div class="w-[100%] mb-[40px]">
+                        <img src="./imgs/projects/AL-boat.png" alt="project">
+                    </div>
+                    <div class="w-[100%] h-[200px] duration-500  overflow-hidden collapsible ">
+                        <h2 class="leading-[28px]">Calculating Long Term Assessment of an AI-based fishing boat
+                            safety design data platform by using CFD
+                        </h2>
+                        <li class="leading-[28px]"> Modelling with 27 models with different bow.
+                        </li>
+                        <li class="leading-[28px]"> Calculating wave spectrum with South Korea sea.
+                        </li>
+                        <li class="leading-[28px]"> Mesh models with the max. of sea state values.
+                        </li>
+                        <li class="leading-[28px]"> Simulation models with potential method in Ansys AQWA.
+                    </div>
+                    <div class="flex justify-center absolute bottom-[10px] translate-x-[-50%] left-[50%]">
+                        <!--<button data-target="6" class="loadMore px-[20px] py-[4px] bg-[#60cbe6] rounded-[20px]  duration-500 hover:text-[#fff]">Github</button> -->
+
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!-- Du an next.....  -->  
-
-
-    
     </main>
+
+    <footer>
+        <div class="pb-[40px]">
+            <p class="text-center text-[13px]">
+                <a href="https://github.com/maivanthuan996" target="_blank" class="text-[#B19470]">GitHub</a> |
+                <a href="https://mail.google.com/mail/u/0/#inbox" class="text-[#B19470]">Gmail</a> |
+                <a href="https://www.linkedin.com/in/thuan-mai-van-771b70214/" target="_blank" class="text-[#B19470]">LinkedIn</a>
+            </p>
+            <p class="text-center text-[13px]">
+                Copyright © <a class="text-[#29ADB2]" href="#">VThuanMai.</a> Updated 2024.
+            </p>
+        </div>
+    </footer>
+
+    <div class="fixed right-10 lg:right-20 bottom-20 z-[10000000] cursor-pointer">
+        <div
+            class="scroll-top border-[#000] border-[1px] px-[10px] py-[4px] rounded-[15px] shadow-2xl shadow-xl hover:shadow-2x ">
+            Back To Top
+        </div>
+    </div>
 
 
     <script src="./script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        document.querySelector('.scroll-top').addEventListener('click', function () {
+            // Cuộn lên đầu trang
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Cuộn mượt mà
+            });
+        });
+
+    </script>
+    <script>
+        // var collapsible = document.querySelector('.collapsible');
+
+        // document.querySelectorAll('loadMore').addEventListener('click', function () {
+        //     console.log(12321321)
+        //     collapsible.classList.toggle('expanded');
+        // });
+
+        // Get all Load More buttons
+        var loadMoreButtons = document.querySelectorAll('.loadMore');
+
+        loadMoreButtons.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                // Get the target from the button's data-target attribute
+                var target = this.getAttribute('data-target');
+
+                // Get all collapsible elements and select the target one
+                var allCollapsibles = document.querySelectorAll('.collapsible');
+                var targetCollapsible = allCollapsibles[target];
+
+                // Toggle the expanded class on the target collapsible
+                targetCollapsible.classList.toggle('expanded');
+            });
+        });
+
+    </script>
+    <script>
+        function setActiveTab(activeCategory) {
+            var btns = document.querySelectorAll(".tab-button");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].classList.remove("btn-active");
+                if (btns[i].getAttribute('onclick') == "filterSelection('" + activeCategory + "')") {
+                    btns[i].classList.add("btn-active");
+                }
+            }
+        }
+
+        window.onload = function () {
+            filterSelection('all');
+        };
+
+        function filterSelection(category) {
+            var items, i;
+            items = document.getElementsByClassName("item");
+            if (category == 'all') category = "";
+
+            // Add the "show" class to the filtered elements, and remove from the others
+            for (i = 0; i < items.length; i++) {
+                removeClass(items[i], "show");
+                if (items[i].className.indexOf(category) > -1) addClass(items[i], "show");
+            }
+        }
+
+        // Show filtered elements
+        function addClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                }
+            }
+        }
+
+        // Hide elements that are not selected
+        function removeClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("tabs");
+        var btns = btnContainer.getElementsByClassName("tab-button");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active-tab");
+                current[0].className = current[0].className.replace(" active-tab", "");
+                this.className += " active-tab";
+            });
+        }
+
+    </script>
+
 </body>
+
 </html>
-        
 
-  <!--     NEW PROJECT       -->
 
-        <!-- <div class="public">
+<!--     NEW PROJECT       -->
+
+<!-- <div class="public">
             <div class="title__public">
                 <i class='bx bx-brightness'></i> 
                 <h1>Project 2</h1>
@@ -335,7 +611,3 @@
                 <div class="swiper-button-prev"></div>
             </div>
         </div> -->
-
-
-
-
